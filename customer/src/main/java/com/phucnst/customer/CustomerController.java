@@ -1,5 +1,6 @@
 package com.phucnst.customer;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -14,11 +15,12 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("api/v1/customers")
+@AllArgsConstructor
 public class CustomerController {
     @Autowired
-    private CustomerRepository repository;
+    private final CustomerRepository repository;
     @Autowired
-    private CustomerService customerService;
+    private final CustomerService customerService;
 
     @PostMapping("/register")
     public void RegisterCustomer(@RequestBody CustomerRegistrationRequest customerRequest) {
@@ -26,6 +28,7 @@ public class CustomerController {
         customerService.registerCustomer(customerRequest);
     }
 
+    // Chạy sau khi start up customer - tạo ra 1 user mới
     /*
     @EventListener(ApplicationReadyEvent.class)
     public void runAfterStartup() {

@@ -1,18 +1,15 @@
 package com.phucnst.fraud;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
 @Service
+@AllArgsConstructor
 public class FraudCheckService {
 
     private final FraudCheckRepository fraudCheckRepository;
-
-    // Constructor
-    public FraudCheckService(FraudCheckRepository repository) {
-        this.fraudCheckRepository = repository;
-    }
 
     public boolean isFraudulent(Integer cusId) {
         // TODO: using third-party for this or make my own check

@@ -1,18 +1,19 @@
 package com.phucnst.fraud;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("api/v1/fraud-check")
+@AllArgsConstructor
 public class FraudController {
 
+    @Autowired
     private final FraudCheckService fraudCheckService;
-
-    public FraudController(FraudCheckService fraudCheckService) {
-        this.fraudCheckService = fraudCheckService;
-    }
 
     @GetMapping(path = "{customerId}")
     public FraudCheckResponse isFraudster(
