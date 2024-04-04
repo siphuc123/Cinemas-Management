@@ -1,6 +1,7 @@
 package com.phucnst.customer;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -8,8 +9,10 @@ import org.springframework.web.client.RestTemplate;
 @AllArgsConstructor
 public class CustomerService {
 
+    @Autowired
     private final CustomerRepository customerRepository;
 
+    @Autowired
     private final RestTemplate restTemplate;
 
     public void registerCustomer(CustomerRegistrationRequest customerRequest) {
@@ -23,7 +26,8 @@ public class CustomerService {
         customerRepository.saveAndFlush(customer);
         // todo: check if fraudster
         FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
-                "http://localhost:8081/api/v1/fraud-check/{customerId}",
+                // before: "http://localhost:8081/api/v1/fraud-check/{customerId}"
+                "http://FRAUD/api/v1/fraud-check/{customerId}",
                 FraudCheckResponse.class,
                 customer.getCustomerId()
         );

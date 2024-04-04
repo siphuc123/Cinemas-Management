@@ -6,6 +6,10 @@ server:
   port: 8761
 
 eureka:
+  dashboard:
+    path: /dashboard
+  instance:
+    hostname: localhost
   client:
     fetch-registry: false
     register-with-eureka: false

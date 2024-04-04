@@ -6,6 +6,13 @@ server:
   port: 8761
 
 eureka:
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+  dashboard:
+    path: /dashboard
+  instance:
+    hostname: localhost
   client:
     fetch-registry: false
     register-with-eureka: false
+

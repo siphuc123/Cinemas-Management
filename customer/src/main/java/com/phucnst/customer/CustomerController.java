@@ -17,6 +17,7 @@ import java.util.List;
 @RequestMapping("api/v1/customers")
 @AllArgsConstructor
 public class CustomerController {
+
     @Autowired
     private final CustomerRepository repository;
     @Autowired

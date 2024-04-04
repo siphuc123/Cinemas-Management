@@ -21,9 +21,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <spring.boot.maven.plugin.version>3.2.3</spring.boot.maven.plugin.version>
-    <spring.boot.dependecies.version>3.2.3</spring.boot.dependecies.version>
-    <spring.cloud-version>2020.0.3</spring.cloud-version>
+    <spring.boot.maven.plugin.version>3.0.0</spring.boot.maven.plugin.version>
+    <spring.boot.dependecies.version>3.0.0</spring.boot.dependecies.version>
+    <spring.cloud-version>2022.0.0</spring.cloud-version>
   </properties>
 
   <dependencyManagement>
