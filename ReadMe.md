@@ -1,4 +1,4 @@
-## _Microservices - CinemasManagement_
+## Microservices
 #### Known as the microservice architecture - is an architectural style that structures an application as a collection of services that are
 
 - Highly maintainable and testable
